@@ -36,18 +36,23 @@ pub async fn main() {
           }
 
           let re = regex::Regex::new(r"\w+").expect("Bad regex");
-          let words: Vec<_> = re.find_iter(&msg.message_text).collect();
+          let words: Vec<_> = re.find_iter(&msg.message_text[1..]).collect();
 
           match words.get(0) {
             None => {}
             Some(first_match) => {
-              let command = first_match.as_str();
+              let command = first_match.as_str().to_lowercase();
               println!("{}", command);
 
-              client
-                .say(msg.channel_login.to_owned(), "Maybe this works :)".to_owned())
-                .await
-                .expect("oof");
+              match &command[..] {
+                "ping" => {
+                  client
+                    .say(msg.channel_login.to_owned(), "Pong!".to_owned())
+                    .await
+                    .expect("oof");
+                }
+                _ => {}
+              }
             }
           }
         }
