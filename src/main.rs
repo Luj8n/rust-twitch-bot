@@ -373,12 +373,17 @@ pub async fn main() {
                 Some(second_word) => match &second_word.to_lowercase()[..] {
                   "add" => match words.get(2) {
                     Some(third_word) => match words.get(3) {
-                      Some(_) => match add_command(&msg.channel_login, third_word, &words[3..].join(" "), &mut data) {
+                      Some(_) => match add_command(
+                        &msg.channel_login,
+                        &third_word.to_lowercase(),
+                        &words[3..].join(" "),
+                        &mut data,
+                      ) {
                         Ok(_) => {
                           client
                             .reply_to_privmsg(
                               format!(
-                                "Successfully added '{}' command => {}",
+                                "Successfully added '{}' command => '{}'",
                                 third_word,
                                 words[3..].join(" ")
                               ),
@@ -409,7 +414,8 @@ pub async fn main() {
                     }
                   },
                   "remove" => match words.get(2) {
-                    Some(third_word) => match remove_command(&msg.channel_login, third_word, &mut data) {
+                    Some(third_word) => match remove_command(&msg.channel_login, &third_word.to_lowercase(), &mut data)
+                    {
                       Ok(_) => {
                         client
                           .reply_to_privmsg(format!("Successfully removed '{}' command", third_word), &msg)
@@ -433,11 +439,20 @@ pub async fn main() {
                   "edit" => match words.get(2) {
                     Some(third_word) => match words.get(3) {
                       Some(_) => {
-                        match edit_command(&msg.channel_login, &third_word, &words[3..].join(" "), &mut data) {
+                        match edit_command(
+                          &msg.channel_login,
+                          &third_word.to_lowercase(),
+                          &words[3..].join(" "),
+                          &mut data,
+                        ) {
                           Ok(_) => {
                             client
                               .reply_to_privmsg(
-                                format!("Successfully set '{}' command to {}", third_word, &words[3..].join(" ")),
+                                format!(
+                                  "Successfully set '{}' command to '{}'",
+                                  third_word,
+                                  &words[3..].join(" ")
+                                ),
                                 &msg,
                               )
                               .await
@@ -470,7 +485,7 @@ pub async fn main() {
                       let answer: Vec<_> = channel
                         .commands
                         .iter()
-                        .map(|c| format!("'{}{}' => {}", bot_prefix, c.name, c.answer))
+                        .map(|c| format!("{}{}", bot_prefix, c.name))
                         .collect();
 
                       client
