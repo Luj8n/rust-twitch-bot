@@ -19,25 +19,41 @@
         },
         {
           "name": "KEKW",
-          "count": 8
+          "count": 11
         },
         {
           "name": "haskellHop",
-          "count": 7
+          "count": 9
         },
         {
           "name": "ferrisDance",
           "count": 1
-        },
-        {
-          "name": "o/",
-          "count": 11
         }
       ],
       "commands": [
         {
           "name": "repo",
           "answer": "https://github.com/Luj8n/rust-twitch-bot"
+        },
+        {
+          "name": "help",
+          "answer": "no help for you KEKW"
+        },
+        {
+          "name": "yare",
+          "answer": "yare.io is an RTS game where you control your units by writing JavaScript code. You harvest stars to collect energy, and use that energy to fight / produce units."
+        },
+        {
+          "name": "yare-wasm",
+          "answer": "https://github.com/L0laapk3/yare.io-wasm"
+        },
+        {
+          "name": "cocbot",
+          "answer": "https://github.com/ChaitanyaLKulkarni/COCBot"
+        },
+        {
+          "name": "discord",
+          "answer": "https://discord.gg/V56vXKe7mY"
         }
       ]
     },
