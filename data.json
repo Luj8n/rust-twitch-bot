@@ -1,0 +1,21 @@
+{
+  "channels": [
+    {
+      "name": "luj8n",
+      "counters": []
+    },
+    {
+      "name": "saltaxatlas",
+      "counters": [
+        {
+          "name": "LUL",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "golyator",
+      "counters": []
+    }
+  ]
+}
