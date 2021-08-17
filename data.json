@@ -2,20 +2,49 @@
   "channels": [
     {
       "name": "luj8n",
-      "counters": []
+      "counters": [],
+      "commands": [
+        {
+          "name": "repo",
+          "answer": "https://github.com/Luj8n/rust-twitch-bot"
+        }
+      ]
     },
     {
       "name": "saltaxatlas",
       "counters": [
         {
           "name": "LUL",
-          "count": 5
+          "count": 13
+        },
+        {
+          "name": "KEKW",
+          "count": 8
+        },
+        {
+          "name": "haskellHop",
+          "count": 7
+        },
+        {
+          "name": "ferrisDance",
+          "count": 1
+        },
+        {
+          "name": "o/",
+          "count": 11
+        }
+      ],
+      "commands": [
+        {
+          "name": "repo",
+          "answer": "https://github.com/Luj8n/rust-twitch-bot"
         }
       ]
     },
     {
       "name": "golyator",
-      "counters": []
+      "counters": [],
+      "commands": []
     }
   ]
 }
